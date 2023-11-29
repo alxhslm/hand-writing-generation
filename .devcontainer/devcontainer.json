@@ -1,0 +1,35 @@
+{
+	"name": "Development",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"ruff.path": [
+					"/usr/local/py-utils/bin/ruff"
+				]
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.black-formatter",
+				"ms-python.mypy-type-checker",
+				"ms-toolsai.jupyter",
+				"charliermarsh.ruff",
+				"eamodio.gitlens",
+			]
+		}
+	},
+	// A command run on the *host* machine before the container is created
+	"initializeCommand": ".devcontainer/initialize.sh",
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
+	"postStartCommand": "bash .devcontainer/post-start.sh",
+	"remoteUser": "vscode",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {}
+	}
+}

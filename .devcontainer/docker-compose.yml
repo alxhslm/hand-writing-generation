@@ -1,0 +1,36 @@
+version: '3'
+
+# We only have one service here, but it's easier to work with docker-compose.yml
+# than devcontainer.json. It also makes it easier to add new services later on.
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Buildkit doesn't cache in-between layers by default, which is fine in
+        # CI environment, but for local development it speeds things up
+        BUILDKIT_INLINE_CACHE: "true"
+
+    env_file:
+      - ../.env
+
+    tty: true
+
+
+    volumes:
+      # Forwards the local Docker socket to the container.
+      - /var/run/docker.sock:/var/run/docker-host.sock
+      # kaggle authentication
+      - ~/.kaggle:/home/vscode/.kaggle
+      # aws authentication
+      - ~/.aws:/home/vscode/.aws
+      # Mount the code at /workspace
+      - ..:/workspace:cached
+      # Persistent caches for apt and pip
+      - apt-cache:/var/cache/apt
+      - user-cache:/home/vscode/.cache
+
+volumes:
+  apt-cache:
+  user-cache:

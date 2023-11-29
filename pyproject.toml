@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "hand-writing-generation"
+version = "0.1.0"
+description = ""
+authors = ["Alex Haslam <alexhaslam12@gmail.com>"]
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "supplemental"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+numpy  = "1.23.5"
+pandas  = "1.5.2"
+scipy = "1.10.0"
+ipython = "^8.15.0"
+jupyter = "1.0.0"
+matplotlib = "^3.8.0"
+mypy = "~1.0.0"
+pandas-stubs = "~1.5.2"
+plotly = "5.15.0"
+pre-commit = "2.20.0"
+streamlit = "1.25.0"
+scikit-learn = "^1.3.2"
+torch = {version="2.0.0",source="torch"}
+torchvision = {version="0.15.1",source="torch"}
+kaggle = "^1.5.16"
+aws-requests-auth = "^0.4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+select = ["F", "E", "W", "I", "PLE", "RUF001", "RUF002", "RUF003", "INP",  "UP006", "UP007", "ICN"]
+ignore = [
+    "E402", # Module level import not at top of file [Issues with streamlit/pydantic and pre-import path alterations]
+]
+unfixable = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.per-file-ignores]
+"**/__init__.py" = ["F401"]
+
+[tool.ruff.flake8-import-conventions.aliases]
+# Default aliases from Ruff (removed unused).
+numpy = "np"
+pandas = "pd"
+scipy = "sp"
+datetime = "dt"
+"plotly.express" = "px"
+"plotly.graph_objects" = "go"
+streamlit = "st"
+typing = "t"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+skip-string-normalization = true
+exclude = '/(\.git|\venv|\.vscode)/'
+
+[tool.mypy]
+strict=true
+sqlite_cache=true  # Faster because doesn't need to read defaults
+show_column_numbers=true  # Necessary to properly highlight issues in VSCode
+disallow_any_generics=false  # pd.Series is not a fully supported generic
+
+[[tool.mypy.overrides]]  # Packages without type information
+module=['scipy', 'scipy.*', 'plotly', 'plotly.*']
+ignore_missing_imports=true
