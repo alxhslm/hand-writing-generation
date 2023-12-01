@@ -31,6 +31,7 @@ torch = {version="2.0.0",source="torch"}
 torchvision = {version="0.15.1",source="torch"}
 kaggle = "^1.5.16"
 aws-requests-auth = "^0.4.3"
+streamlit-drawable-canvas = "^0.9.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
