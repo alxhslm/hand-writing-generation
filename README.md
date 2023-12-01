@@ -3,7 +3,7 @@
 
 The objective of this project is to be able to:
 1. Classify hand-written characters
-2. Generate realistic hand-written characters
+2. Generate realistic hand-written characters in a given style
 
 ## Downloading the dataset
 The dataset can be download from [Kaggle](https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format/data). You can either download this:
@@ -14,7 +14,7 @@ The dataset can be download from [Kaggle](https://www.kaggle.com/datasets/sachin
     ```
 
 ## Using the interactive dashboard
-To generate synthetis characters in your own hand-writing style, you can use the interactive `streamlit` dashboard. This is hosted on [Streamlit Cloud](https://streamlit.io/cloud).
+To classify your own hand-written characters and generate synthetic characters in your own hand-writing style, you can use the interactive `streamlit` dashboard. This is hosted on [Streamlit Cloud](https://streamlit.io/cloud).
 
 You can also launch the dashboard locally by running the following command:
 
