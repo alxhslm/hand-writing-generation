@@ -67,6 +67,10 @@ def recenter_image(image: Image) -> Image:
 
 
 st.title(":writing_hand: Hand-writing generator")
+st.markdown(
+    "This is an ML-powered app for generating synthetic hand-written characters in a given writing style. "
+    "You can find out more about how it works [here](https://alxhslm.github.io/projects/hand-writing-generation/)."
+)
 
 st.header(":mag: Identifying your writing style")
 st.markdown("First draw some characters in the boxes below. These will be used to identify the style of your writing.")
