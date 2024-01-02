@@ -8,7 +8,7 @@ from training.model import VAE
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-st.set_page_config(layout="wide")
+st.set_page_config("Hand-writing generator", page_icon="writing_hand", layout="wide")
 
 
 @st.cache_resource()
