@@ -16,7 +16,7 @@ RUN apt-get update \
 # existing folders, so we create & chown ahead of time.
 RUN mkdir /home/vscode/.cache && chown vscode:vscode /home/vscode/.cache
 RUN pipx install pre-commit
-RUN pipx install ruff==0.0.282
+RUN pipx install ruff==0.4.1
 RUN pipx install poetry==1.6.0
 
 # Ensure PYTHONPATH is set for streamlit

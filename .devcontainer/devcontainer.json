@@ -15,11 +15,10 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				"ms-python.black-formatter",
 				"ms-python.mypy-type-checker",
 				"ms-toolsai.jupyter",
 				"charliermarsh.ruff",
-				"eamodio.gitlens",
+				"eamodio.gitlens"
 			]
 		}
 	},

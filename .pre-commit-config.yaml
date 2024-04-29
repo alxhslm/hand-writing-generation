@@ -1,15 +1,10 @@
-# Please update dev-requirements accordingly when updating black and ruff versions.
+# Please update dev-requirements accordingly when updating ruff versions.
 repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.0.282'
+    rev: 'v0.4.1'
     hooks:
       - id: ruff
         args: [--fix]
-
-  - repo: https://github.com/psf/black
-    rev: 23.1.0
-    hooks:
-      - id: black-jupyter
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.6.0
