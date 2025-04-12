@@ -3,6 +3,7 @@ name = "hand-writing-generation"
 version = "0.1.0"
 description = ""
 authors = ["Alex Haslam <alexhaslam12@gmail.com>"]
+package-mode = false
 
 [[tool.poetry.source]]
 name = "torch"
