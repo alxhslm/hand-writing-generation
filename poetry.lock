@@ -275,14 +275,14 @@ files = [
 
 [[package]]
 name = "cachetools"
-version = "5.3.3"
+version = "6.2.6"
 description = "Extensible memoizing collections and decorators"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "cachetools-5.3.3-py3-none-any.whl", hash = "sha256:0abad1021d3f8325b2fc1d2e9c8b9c9d57b04c3932657a72465447332c24d945"},
-    {file = "cachetools-5.3.3.tar.gz", hash = "sha256:ba29e2dfa0b8b556606f097407ed1aa62080ee108ab0dc5ec9d6a723a007d105"},
+    {file = "cachetools-6.2.6-py3-none-any.whl", hash = "sha256:8c9717235b3c651603fff0076db52d6acbfd1b338b8ed50256092f7ce9c85bda"},
+    {file = "cachetools-6.2.6.tar.gz", hash = "sha256:16c33e1f276b9a9c0b49ab5782d901e3ad3de0dd6da9bf9bcd29ac5672f2f9e6"},
 ]
 
 [[package]]
@@ -1509,31 +1509,6 @@ files = [
 ]
 
 [[package]]
-name = "markdown-it-py"
-version = "3.0.0"
-description = "Python port of markdown-it. Markdown parsing, done right!"
-optional = false
-python-versions = ">=3.8"
-groups = ["main"]
-files = [
-    {file = "markdown-it-py-3.0.0.tar.gz", hash = "sha256:e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"},
-    {file = "markdown_it_py-3.0.0-py3-none-any.whl", hash = "sha256:355216845c60bd96232cd8d8c40e8f9765cc86f46880e43a8fd22dc1a1a8cab1"},
-]
-
-[package.dependencies]
-mdurl = ">=0.1,<1.0"
-
-[package.extras]
-benchmarking = ["psutil", "pytest", "pytest-benchmark"]
-code-style = ["pre-commit (>=3.0,<4.0)"]
-compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0,<2.0)", "mistune (>=2.0,<3.0)", "panflute (>=2.3,<3.0)"]
-linkify = ["linkify-it-py (>=1,<3)"]
-plugins = ["mdit-py-plugins"]
-profiling = ["gprof2dot"]
-rtd = ["jupyter_sphinx", "mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx_book_theme"]
-testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
-
-[[package]]
 name = "markupsafe"
 version = "2.1.5"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1666,18 +1641,6 @@ files = [
 
 [package.dependencies]
 traitlets = "*"
-
-[[package]]
-name = "mdurl"
-version = "0.1.2"
-description = "Markdown URL utilities"
-optional = false
-python-versions = ">=3.7"
-groups = ["main"]
-files = [
-    {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
-    {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
-]
 
 [[package]]
 name = "mistune"
@@ -2798,25 +2761,6 @@ files = [
 ]
 
 [[package]]
-name = "rich"
-version = "13.7.1"
-description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
-optional = false
-python-versions = ">=3.7.0"
-groups = ["main"]
-files = [
-    {file = "rich-13.7.1-py3-none-any.whl", hash = "sha256:4edbae314f59eb482f54e9e30bf00d33350aaa94f4bfcd4e9e3110e64d0d7222"},
-    {file = "rich-13.7.1.tar.gz", hash = "sha256:9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"},
-]
-
-[package.dependencies]
-markdown-it-py = ">=2.2.0"
-pygments = ">=2.13.0,<3.0.0"
-
-[package.extras]
-jupyter = ["ipywidgets (>=7.5.1,<9)"]
-
-[[package]]
 name = "rpds-py"
 version = "0.18.0"
 description = "Python bindings to Rust's persistent data structures (rpds)"
@@ -3118,39 +3062,45 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "streamlit"
-version = "1.37.0"
+version = "1.54.0"
 description = "A faster way to build and share data apps"
 optional = false
-python-versions = "!=3.9.7,>=3.8"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "streamlit-1.37.0-py2.py3-none-any.whl", hash = "sha256:d17e2d32b075a270a97f134ab5d22bbb98b4e474fa261ff49dc4a2b380386c84"},
-    {file = "streamlit-1.37.0.tar.gz", hash = "sha256:463ef728ba21e74e05122e3704e8af644a7bdbb5822e281b8daf4a0a48761879"},
+    {file = "streamlit-1.54.0-py3-none-any.whl", hash = "sha256:a7b67d6293a9f5f6b4d4c7acdbc4980d7d9f049e78e404125022ecb1712f79fc"},
+    {file = "streamlit-1.54.0.tar.gz", hash = "sha256:09965e6ae7eb0357091725de1ce2a3f7e4be155c2464c505c40a3da77ab69dd8"},
 ]
 
 [package.dependencies]
-altair = ">=4.0,<6"
-blinker = ">=1.0.0,<2"
-cachetools = ">=4.0,<6"
+altair = ">=4.0,<5.4.0 || >5.4.0,<5.4.1 || >5.4.1,<7"
+blinker = ">=1.5.0,<2"
+cachetools = ">=5.5,<7"
 click = ">=7.0,<9"
 gitpython = ">=3.0.7,<3.1.19 || >3.1.19,<4"
-numpy = ">=1.20,<3"
-packaging = ">=20,<25"
-pandas = ">=1.3.0,<3"
-pillow = ">=7.1.0,<11"
-protobuf = ">=3.20,<6"
+numpy = ">=1.23,<3"
+packaging = ">=20"
+pandas = ">=1.4.0,<3"
+pillow = ">=7.1.0,<13"
+protobuf = ">=3.20,<7"
 pyarrow = ">=7.0"
 pydeck = ">=0.8.0b4,<1"
 requests = ">=2.27,<3"
-rich = ">=10.14.0,<14"
-tenacity = ">=8.1.0,<9"
+tenacity = ">=8.1.0,<10"
 toml = ">=0.10.1,<2"
-tornado = ">=6.0.3,<7"
-typing-extensions = ">=4.3.0,<5"
-watchdog = {version = ">=2.1.5,<5", markers = "platform_system != \"Darwin\""}
+tornado = ">=6.0.3,<6.5.0 || >6.5.0,<7"
+typing-extensions = ">=4.10.0,<5"
+watchdog = {version = ">=2.1.5,<7", markers = "platform_system != \"Darwin\""}
 
 [package.extras]
-snowflake = ["snowflake-connector-python (>=2.8.0) ; python_version < \"3.12\"", "snowflake-snowpark-python (>=0.9.0) ; python_version < \"3.12\""]
+all = ["rich (>=11.0.0)", "streamlit[auth,charts,pdf,performance,snowflake,sql]"]
+auth = ["Authlib (>=1.3.2)"]
+charts = ["graphviz (>=0.19.0)", "matplotlib (>=3.0.0)", "orjson (>=3.5.0)", "plotly (>=4.0.0)"]
+pdf = ["streamlit-pdf (>=1.0.0)"]
+performance = ["httptools (>=0.6.3)", "orjson (>=3.5.0)", "uvloop (>=0.15.2) ; sys_platform != \"win32\" and sys_platform != \"cygwin\" and platform_python_implementation != \"PyPy\""]
+snowflake = ["snowflake-connector-python (>=3.3.0) ; python_version < \"3.12\"", "snowflake-snowpark-python[modin] (>=1.17.0) ; python_version < \"3.12\""]
+sql = ["SQLAlchemy (>=2.0.0)"]
+starlette = ["anyio (>=4.0.0)", "itsdangerous (>=2.1.2)", "python-multipart (>=0.0.10)", "starlette (>=0.40.0)", "uvicorn (>=0.30.0)", "websockets (>=12.0.0)"]
 
 [[package]]
 name = "streamlit-drawable-canvas"
@@ -3594,4 +3544,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "~3.11"
-content-hash = "c0e2256975e3542c9c194b342db9b0b11f6c5d03aee4353b668fa9ce81e02649"
+content-hash = "7e2106e29a309a368f19d5c1a166b38e96c8a20e578e502829da571a2a3d6757"
