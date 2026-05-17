@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 
-FROM mcr.microsoft.com/vscode/devcontainers/python:0-3.11
+FROM mcr.microsoft.com/devcontainers/python:3.11-bookworm
 
 # Install required system packages
 RUN apt-get update \
@@ -16,8 +16,8 @@ RUN apt-get update \
 # existing folders, so we create & chown ahead of time.
 RUN mkdir /home/vscode/.cache && chown vscode:vscode /home/vscode/.cache
 RUN pipx install pre-commit
-RUN pipx install ruff==0.4.1
-RUN pipx install poetry==1.6.0
+RUN pipx install ruff==0.11.10
+RUN pipx install poetry==2.1.3
 
 # Ensure PYTHONPATH is set for streamlit
 ENV PYTHONPATH=/workspace
