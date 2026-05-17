@@ -9,7 +9,7 @@ from training.utils import class_num_to_label, generate_images, label_to_class_n
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-st.set_page_config("Hand-writing generator", page_icon="writing_hand", layout="wide")
+st.set_page_config("Hand-writing generator", page_icon="✍️", layout="wide")
 
 
 @st.cache_resource()
