@@ -1,5 +1,5 @@
 # :writing_hand: Hand writing generation
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hand-writing-generation.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)](https://hand-writing-generation.streamlit.app/)
 
 The objective of this project is to be able to:
 1. Classify hand-written characters
