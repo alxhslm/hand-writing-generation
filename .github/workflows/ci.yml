@@ -29,7 +29,9 @@ jobs:
         run: pipx install poetry==2.1.3
 
       - name: Configure Poetry
-        run: poetry config virtualenvs.in-project true
+        run: |
+          poetry config virtualenvs.in-project true
+          poetry env use $(which python)
 
       - name: Cache virtualenv
         uses: actions/cache@v4
