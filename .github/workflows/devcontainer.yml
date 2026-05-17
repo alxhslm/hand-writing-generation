@@ -1,0 +1,21 @@
+name: Devcontainer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .devcontainer/**
+  pull_request:
+    branches: [main]
+    paths:
+      - .devcontainer/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build devcontainer image
+        run: docker build .devcontainer/ -f .devcontainer/Dockerfile
