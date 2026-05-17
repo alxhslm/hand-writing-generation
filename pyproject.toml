@@ -24,6 +24,10 @@ kaggle = "^1.5.16"
 aws-requests-auth = "^0.4.3"
 requests = "^2.33.0"
 streamlit-drawable-canvas = "^0.9.3"
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
