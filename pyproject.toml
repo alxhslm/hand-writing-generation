@@ -24,7 +24,7 @@ kaggle = "^1.5.16"
 aws-requests-auth = "^0.4.3"
 requests = "^2.33.0"
 streamlit-drawable-canvas = "^0.9.3"
-pytest = "^8.0"
+pytest = ">=8,<10"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
