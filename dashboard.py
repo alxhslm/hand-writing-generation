@@ -5,7 +5,7 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
 from training.model import VAE
-from training.utils import class_num_to_label, label_to_class_num, recenter_image
+from training.utils import class_num_to_label, generate_images, label_to_class_num, recenter_image
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -19,23 +19,6 @@ def load_model(filename: str) -> VAE:
     model.eval()
     return model
 
-
-def generate_images(model: VAE, y: torch.Tensor, z_means: torch.Tensor, log_z_vars: torch.Tensor) -> list[np.ndarray]:
-    z_evals = model.sample(z_means, log_z_vars + 2 * np.log(randomness + 1e-8)).tile(len(y), 1)
-    y_evals = (
-        torch.nn.functional.one_hot(y.reshape(-1, 1).tile(1, z_means.shape[0]).flatten(), num_classes=model.output_size)
-        .float()
-        .to(device)
-    )
-    return [
-        im
-        for im in model.decode(z_evals, y_evals)
-        .sigmoid()
-        .reshape(len(y), z_means.shape[0], model.input_size, model.input_size)
-        .mean(dim=1)
-        .detach()
-        .numpy()
-    ]
 
 
 
@@ -117,7 +100,7 @@ images = []
 for t in text:
     index = label_to_class_num(t.upper())
     if index:
-        images.append(generate_images(model, torch.tensor([index]), z_mean, log_z_var)[0])
+        images.append(generate_images(model, torch.tensor([index]), z_mean, log_z_var, randomness)[0])
     else:
         images.append(np.zeros((28, 28)))
 

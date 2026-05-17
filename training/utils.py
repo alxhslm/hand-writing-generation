@@ -1,5 +1,27 @@
 import numpy as np
+import torch
 from PIL import Image, ImageOps
+
+from training.model import VAE
+
+
+def generate_images(
+    model: VAE, y: torch.Tensor, z_means: torch.Tensor, log_z_vars: torch.Tensor, randomness: float
+) -> list[np.ndarray]:
+    z_evals = model.sample(z_means, log_z_vars + 2 * np.log(randomness + 1e-8)).tile(len(y), 1)
+    y_evals = (
+        torch.nn.functional.one_hot(y.reshape(-1, 1).tile(1, z_means.shape[0]).flatten(), num_classes=model.output_size)
+        .float()
+    )
+    return [
+        im
+        for im in model.decode(z_evals, y_evals)
+        .sigmoid()
+        .reshape(len(y), z_means.shape[0], model.input_size, model.input_size)
+        .mean(dim=1)
+        .detach()
+        .numpy()
+    ]
 
 
 def class_num_to_label(y: int) -> str:
