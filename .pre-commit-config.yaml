@@ -1,7 +1,7 @@
 # Please update dev-requirements accordingly when updating ruff versions.
 repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.4.1'
+    rev: 'v0.11.10'
     hooks:
       - id: ruff
         args: [--fix]

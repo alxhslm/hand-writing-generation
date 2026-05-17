@@ -6,15 +6,15 @@ authors = ["Alex Haslam <alexhaslam12@gmail.com>"]
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "~3.11"
-numpy  = "1.23.5"
-pandas  = "1.5.2"
-scipy = "1.10.0"
+python = "^3.11"
+numpy  = "^1.26"
+pandas  = "^2.0"
+scipy = "^1.11"
 ipython = "^8.15.0"
 jupyter = "1.0.0"
 matplotlib = "^3.8.0"
-mypy = "~1.0.0"
-pandas-stubs = "~1.5.2"
+mypy = "^1.0"
+pandas-stubs = "^2.0"
 plotly = "5.15.0"
 streamlit = "1.54.0"
 scikit-learn = "^1.5.0"
@@ -24,6 +24,10 @@ kaggle = "^1.5.16"
 aws-requests-auth = "^0.4.3"
 requests = "^2.33.0"
 streamlit-drawable-canvas = "^0.9.3"
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
